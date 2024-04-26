@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>FullPropertyChanged</Title>
+			<Author>Ostapchuk AB</Author>
+			<Description>full property with OnPropertyChanged</Description>
+			<Shortcut>fullPropertyChanged</Shortcut>
+		</Header>
+		<Snippet>
+			<Code Language="CSharp">
+				<![CDATA[
+				 string _name="";
+				[DisplayName("MyName")]
+    public string Name 
+    { 
+        get=>_name;
+        set 
+        { 
+        if (value != _name) 
+            {
+            _name = value;
+                OnPropertyChanged();
+            }
+        }
+    }
+
+]]>
+			</Code>
+			<Imports>
+        <Import>
+          <Namespace>System.ComponentModel</Namespace>
+        </Import>
+      </Imports>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>
