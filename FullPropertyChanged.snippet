@@ -2,24 +2,35 @@
 <CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
 	<CodeSnippet Format="1.0.0">
 		<Header>
-			<Title>FullPropertyChanged</Title>
+			<Title>PropFullPropertyChanged</Title>
 			<Author>Ostapchuk AB</Author>
 			<Description>full property with OnPropertyChanged</Description>
-			<Shortcut>fullPropertyChanged</Shortcut>
+			<Shortcut>propfullnotify</Shortcut>
 		</Header>
 		<Snippet>
+		<Declarations>
+				<Literal>
+					<ID>name</ID>
+					<Default>name</Default>
+				</Literal>
+				<Literal>
+					<ID>Name</ID>
+					<Default>Name</Default>
+				</Literal>
+			</Declarations>
+
 			<Code Language="CSharp">
 				<![CDATA[
-				 string _name="";
+				 string $name$="";
 				[DisplayName("MyName")]
-    public string Name 
+    public string $Name$ 
     { 
-        get=>_name;
+        get=>$name$;
         set 
         { 
-        if (value != _name) 
+        if (value != $name$) 
             {
-            _name = value;
+            $name$ = value;
                 OnPropertyChanged();
             }
         }
